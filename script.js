@@ -71,7 +71,7 @@ const reset = function () {
   document.querySelector('body').style.backgroundColor = '#222';
   answer = Math.floor(Math.random() * 20) + 1;
   document.querySelector('.number').textContent = '?';
-  document.querySelector('.number').style.width = 15rem;
+  document.querySelector('.number').style.width = '15 rem';
 }
 
 
