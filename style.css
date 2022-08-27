@@ -30,8 +30,17 @@ main {
   color: #eee;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
+
+@media (min-width: 600px) {
+    main {
+      flex-wrap: nowrap;
+    }
+    html {
+      font-size: 20.83%;
+      box-sizing: border-box;
+    }
 
 .left {
   width: 52rem;
