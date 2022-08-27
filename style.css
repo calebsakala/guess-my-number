@@ -157,7 +157,7 @@ body.animate {
   margin-bottom: 2rem;
 }
 
-@media (min-width: 600px) {
+@media (max-width: 800px) {
     main {
       flex-wrap: nowrap;
     }
