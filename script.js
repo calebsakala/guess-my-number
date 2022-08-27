@@ -55,7 +55,7 @@ const logger = function () {
       subtractTurn()
     } else if (userGuess < answer) {
       shakePage(userGuess, answer);
-      document.querySelector('body').style.backgroundColor = '#ABD1F3'
+      document.querySelector('body').style.backgroundColor = '#8daed9'
       document.querySelector('.message').textContent = 'Too low!';
       subtractTurn()
     }
