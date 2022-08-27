@@ -1,4 +1,4 @@
-# Guess my number
+# Guess My Number
 This web game started off as the product of me following The Complete JavaScript Tutorial; it ended with me running WILD.
 
 Within: 
