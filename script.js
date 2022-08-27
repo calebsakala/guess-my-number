@@ -91,7 +91,7 @@ const logger = function () {
 // so high scores can be kept
 const reset = function () {
   guessedRight = false;
-  document.querySelector('.message').textContent = 'Keep guessing...';
+  document.querySelector('.message').textContent = "Let's go!";
   document.querySelector('.guess').value = '';
   userScore = 20;
   document.querySelector('.score').textContent = userScore;
