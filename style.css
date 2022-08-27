@@ -162,9 +162,6 @@ body.animate {
       flex-wrap: nowrap;
     }
     html {
-      font-size: 60%;
+      font-size: 55%;
       box-sizing: border-box;
-    }
-    section {
-      flex-basis: 20%;
     }
