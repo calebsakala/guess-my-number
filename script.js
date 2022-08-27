@@ -41,6 +41,7 @@ const logger = function () {
     } else if (userGuess === answer) {
       document.querySelector('.number').textContent = answer;
       document.querySelector('.message').textContent = winningMessage;
+      document.querySelector('.number').style.width = '30 rem';
       let score = document.querySelector('.score').textContent; 
       let highScore = document.querySelector('.highscore').textContent;
       if (highScore < score) {
