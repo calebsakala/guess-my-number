@@ -33,15 +33,6 @@ main {
   justify-content: space-between;
 }
 
-@media (min-width: 600px) {
-    main {
-      flex-wrap: nowrap;
-    }
-    html {
-      font-size: 20.83%;
-      box-sizing: border-box;
-    }
-
 .left {
   width: 52rem;
   display: flex;
@@ -165,3 +156,15 @@ body.animate {
 .label-score {
   margin-bottom: 2rem;
 }
+
+@media (min-width: 600px) {
+    main {
+      flex-wrap: nowrap;
+    }
+    html {
+      font-size: 20.83%;
+      box-sizing: border-box;
+    }
+    section {
+      flex-basis: 33%;
+    }
