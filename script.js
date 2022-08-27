@@ -41,7 +41,7 @@ const logger = function () {
     } else if (userGuess === answer) {
       document.querySelector('.number').textContent = answer;
       document.querySelector('.message').textContent = winningMessage;
-      document.querySelector('.number').style.width = '30 rem';
+      document.querySelector('.number').style.width = '30rem';
       let score = document.querySelector('.score').textContent; 
       let highScore = document.querySelector('.highscore').textContent;
       if (highScore < score) {
@@ -71,7 +71,7 @@ const reset = function () {
   document.querySelector('body').style.backgroundColor = '#222';
   answer = Math.floor(Math.random() * 20) + 1;
   document.querySelector('.number').textContent = '?';
-  document.querySelector('.number').style.width = '15 rem';
+  document.querySelector('.number').style.width = '15rem';
 }
 
 
