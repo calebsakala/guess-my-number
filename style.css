@@ -105,13 +105,21 @@ h1 {
   cursor: pointer;
 }
 
+
+/* Allowing the button to respond to hovering */
 .btn:hover {
   background-color: #ccc;
 }
 
+
+/* Allowing the button to respond to a click */
+
 .btn:active {
   opacity: 0.8;
 }
+
+
+/* Creating the animation for shaking the page */
 
 body.animate {
   overflow: hidden;
@@ -157,6 +165,8 @@ body.animate {
   margin-bottom: 2rem;
 }
 
+
+/* Formatting for mobile devices */
 @media (max-width: 800px) {
     main {
       flex-wrap: nowrap;
