@@ -11,7 +11,17 @@ const noInputMessage = 'No number found! :(';
 const shakeButton = document.querySelector(".check");
 const shakeElement = document.querySelector("body");
 let guessedRight = false;
-
+const guessedHigh = function () {
+  document.querySelector('body').style.backgroundColor = 'rgb(243, 44, 44)'
+  document.querySelector('.message').textContent = 'Too high!';
+  subtractTurn();
+}
+const guessedLow = function () {
+  document.querySelector('body').style.backgroundColor = '#8daed9'
+  document.querySelector('.message').textContent = 'Too low!';
+  subtractTurn();
+}
+  
 
 // this function subtracts one from the user's score
 // if it isn't already 0
@@ -72,16 +82,12 @@ const logger = function () {
     // if the user guesses too high
     } else if (userGuess > answer) {
       shakePage(userGuess, answer);
-      document.querySelector('body').style.backgroundColor = 'rgb(243, 44, 44)'
-      document.querySelector('.message').textContent = 'Too high!';
-      subtractTurn()
+      guessedHigh()
     
     // if the user guessess too low
     } else if (userGuess < answer) {
       shakePage(userGuess, answer);
-      document.querySelector('body').style.backgroundColor = '#8daed9'
-      document.querySelector('.message').textContent = 'Too low!';
-      subtractTurn()
+      guessedLow()
     }
   }
 }
