@@ -13,10 +13,16 @@ const shakeElement = document.querySelector("body");
 let alreadyGuessedRight = false;
 
 
+// this function displays a message to the screen
+const displayMessage = function (message) {
+  document.querySelector('.message').textContent = message
+}
+
+
 // this function gets executed if the user's guess is too high
 const guessedHigh = function () {
   document.querySelector('body').style.backgroundColor = 'rgb(243, 44, 44)'
-  document.querySelector('.message').textContent = 'Too high!';
+  displayMessage('Too high!');
   subtractTurn();
 }
 
@@ -24,15 +30,15 @@ const guessedHigh = function () {
 // this function gets executed if the user's guess is too low
 const guessedLow = function () {
   document.querySelector('body').style.backgroundColor = '#8daed9'
-  document.querySelector('.message').textContent = 'Too low!';
+  displayMessage('Too low!');
   subtractTurn();
 }
- 
+
 
 // this function gets executed is the user guesses correctly
 const guessedRight = function () {
   document.querySelector('.number').textContent = answer;
-  document.querySelector('.message').textContent = winningMessage;
+  displayMessage(winningMessage);
   document.querySelector('.number').style.width = '100%';
 }
 
@@ -46,7 +52,7 @@ const subtractTurn = function () {
   } else if (userScore == 1){
     userScore--;
     document.querySelector('.score').textContent = userScore;
-    document.querySelector('.message').textContent = losingMessage;
+    displayMessage(losingMessage);
   }
 }
 
@@ -73,7 +79,7 @@ const logger = function () {
     
     // and if the userGuess value is not empty
     if (!userGuess) {
-      document.querySelector('.message').textContent = noInputMessage;
+      displayMessage(noInputMessage);
     } else if (userScore < 1) {
       // if the user's score is less than 1
       // nothing should occur
@@ -108,7 +114,7 @@ const logger = function () {
 // so high scores can be kept
 const reset = function () {
   alreadyGuessedRight = false;
-  document.querySelector('.message').textContent = "Let's gooo!";
+  displayMessage("Let's gooo!");
   document.querySelector('.guess').value = '';
   userScore = 20;
   document.querySelector('.score').textContent = userScore;
