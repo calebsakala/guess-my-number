@@ -15,13 +15,13 @@ let alreadyGuessedRight = false;
 
 // this function displays a message to the screen
 const displayMessage = function (message) {
-  document.querySelector('.message').textContent = message
+  document.querySelector('.message').textContent = message;
 }
 
 
 // this function gets executed if the user's guess is too high
 const guessedHigh = function () {
-  document.querySelector('body').style.backgroundColor = 'rgb(243, 44, 44)'
+  document.querySelector('body').style.backgroundColor = 'rgb(243, 44, 44)';
   displayMessage('Too high!');
   subtractTurn();
 }
@@ -29,7 +29,7 @@ const guessedHigh = function () {
 
 // this function gets executed if the user's guess is too low
 const guessedLow = function () {
-  document.querySelector('body').style.backgroundColor = '#8daed9'
+  document.querySelector('body').style.backgroundColor = '#8daed9';
   displayMessage('Too low!');
   subtractTurn();
 }
