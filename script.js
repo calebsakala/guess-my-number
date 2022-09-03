@@ -10,18 +10,32 @@ const winningMessage = 'You got it right! xD';
 const noInputMessage = 'No number found! :(';
 const shakeButton = document.querySelector(".check");
 const shakeElement = document.querySelector("body");
-let guessedRight = false;
+let alreadyGuessedRight = false;
+
+
+// this function gets executed if the user's guess is too high
 const guessedHigh = function () {
   document.querySelector('body').style.backgroundColor = 'rgb(243, 44, 44)'
   document.querySelector('.message').textContent = 'Too high!';
   subtractTurn();
 }
+
+
+// this function gets executed if the user's guess is too low
 const guessedLow = function () {
   document.querySelector('body').style.backgroundColor = '#8daed9'
   document.querySelector('.message').textContent = 'Too low!';
   subtractTurn();
 }
-  
+ 
+
+// this function gets executed is the user guesses correctly
+const guessedRight = function () {
+  document.querySelector('.number').textContent = answer;
+  document.querySelector('.message').textContent = winningMessage;
+  document.querySelector('.number').style.width = '100%';
+}
+
 
 // this function subtracts one from the user's score
 // if it isn't already 0
@@ -55,7 +69,7 @@ const logger = function () {
   const userGuess = Number(document.querySelector('.guess').value);
   
   // action is only taken if the user hasn't already guessed the answer correctly 
-  if (!guessedRight) {
+  if (!alreadyGuessedRight) {
     
     // and if the userGuess value is not empty
     if (!userGuess) {
@@ -66,10 +80,7 @@ const logger = function () {
       
       // if the user wins
     } else if (userGuess === answer) {
-      document.querySelector('.number').textContent = answer;
-      document.querySelector('.message').textContent = winningMessage;
-      document.querySelector('.number').style.width = '30rem';
-      
+      guessedRight()
       let score = document.querySelector('.score').textContent; 
       let highScore = document.querySelector('.highscore').textContent;
       
@@ -77,7 +88,7 @@ const logger = function () {
         document.querySelector('.highscore').textContent = score;
       };
       document.querySelector('body').style.backgroundColor = '#60b347';
-      guessedRight = true;
+      alreadyGuessedRight = true;
     
     // if the user guesses too high
     } else if (userGuess > answer) {
@@ -96,7 +107,7 @@ const logger = function () {
 // the function to allow the user to restart the game without restarting the browser
 // so high scores can be kept
 const reset = function () {
-  guessedRight = false;
+  alreadyGuessedRight = false;
   document.querySelector('.message').textContent = "Let's gooo!";
   document.querySelector('.guess').value = '';
   userScore = 20;
