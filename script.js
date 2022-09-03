@@ -1,5 +1,9 @@
 'use strict';
 
+if (navigator.userAgentData.mobile) {
+  alert("Gaming experience on mobile is best experienced with a rotated screen. 🔄")
+}  
+
 // generates a random number between 1 and 20
 let answer = Math.floor(Math.random() * 20) + 1;
 
